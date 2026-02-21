@@ -222,8 +222,8 @@ jQuery( function() {
                             settings: {
                                 swipe: false,
                                 swipeToSlide: false,
-                                touchMove: 'false',
-                                draggable: 'false',
+                                touchMove: false,
+                                draggable: false,
                             }
                         },
                     ]
@@ -356,10 +356,15 @@ jQuery( function() {
         },
     }
 
-    jQuery(document).on( 'lity:ready', function( event, lightbox ) {
+    jQuery( document ).on( 'lity:ready', function( event, lightbox ) {
         if ( lightbox.opener().data( 'title' ) != '') {
             jQuery(event.currentTarget.activeElement).find( '.lity-content' ).prepend( '<p class="caption">' + lightbox.opener().data( 'title' ) + '</p>' );
         }
+    });
+
+    jQuery( window ).on( 'load', function () {
+        jQuery('.slider-for').slick('setPosition');
+        jQuery('.slider-nav').slick('setPosition');
     });
 
     jQuery( document ).ready( function() {
