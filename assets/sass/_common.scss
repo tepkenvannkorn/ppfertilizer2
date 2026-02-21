@@ -1,0 +1,441 @@
+@import "reset";
+@import "breakpoint";
+@import "var";
+@import "fonts";
+@import "mixin";
+
+body {
+    color: var(--color-text);
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', 'Hanuman', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    @include mobile {
+        //font-size: toRem(14);
+    }
+}
+
+.container {
+    //width: 100%;
+    max-width: $size__desktop-width;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    @include desktop {
+        width: auto;
+    }
+    @include tablet {
+        padding: 0 1rem;
+        margin: auto;
+        max-width: 100%;
+    }
+    @include mobile {
+        padding: 0 1rem;
+    }
+}
+
+h1,
+h1.title {
+    font-size: 36px;
+    line-height: 1.45px;
+}
+
+h2,
+h2.title {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poppins', 'Hanuman', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    @include mobile {
+        // word-break: break-all;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+strong {
+    font-family: 'Poppins', 'Hanuman', sans-serif;
+    font-weight: bold;
+}
+
+.img-fluid,
+img,
+figure {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-style: italic;
+    height: auto;
+    max-width: 100%;
+    shape-margin: .75rem;
+    vertical-align: middle;
+    text-align: center;
+}
+figcaption,
+p.caption {
+    color: var(--color-text-grey);
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p.caption {
+    margin-top: 1rem;
+}
+
+em {
+    font-style: italic;
+}
+
+blockquote {
+    padding-left: 20px;
+    font-style: italic;
+}
+
+a.cta {
+    background-color: var(--color-brand);
+    border: 1.5px solid var(--color-brand);
+    border-radius: 4px;
+    color: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    transition: .4s ease all;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+    }
+    &:after {
+        content: '\F135';
+        display: inline-flex;
+        font-family: 'bootstrap-icons';
+    }
+}
+
+ul.pagination,
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    width: 100%;
+    ul {
+        margin-bottom: 0
+    }
+    .page-item {
+        background-color: var(--color-grey);
+        &:first-of-type {
+            border-radius: 4px 0 0 4px;
+            .page-link {
+                border-radius: 4px 0 0 4px;
+            }
+        }
+        &:last-of-type {
+            border-radius: 0 4px 4px 0;
+            .page-link {
+                border-radius: 0 4px 4px 0;
+            }
+        }
+        .page-link {
+            background-color: var(--color-light-green);
+            color: var(--color-brand);
+            cursor: pointer;
+            display: block;
+            padding: 6px 12px;
+        }
+        &.active>.page-link {
+            background-color: var(--color-brand);
+            color: var(--color-white);
+            cursor: crosshair;
+        }
+    }
+}
+
+.breadcrumb-wrapper {
+    .container {
+        padding: 0;
+    }
+    .breadcrumb {
+        display: flex;
+        font-size: .875rem;
+        gap: .5rem;
+        list-style: none !important;
+        white-space: nowrap;
+        overflow-x: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        li {
+            color: var(--color-text-grey);
+            display: flex;
+            padding: 6px 0;
+            transition: .4s ease-in-out all;
+            &:after {
+                color: var(--color-white);
+                content: "\F657";
+                display: inline-block;
+                font-family: 'bootstrap-icons';
+                padding-left: .5rem;
+            }
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        a {
+            color: var(--color-secondary);
+            span.bi {
+                display: inline-block;
+                padding-right: 10px;
+            }
+            
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.to-top {
+    @include boxShadow();
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    bottom: 15px;
+    color: var(--color-white);
+    cursor: pointer;
+    display: none;
+    padding: 10px 15px;
+    position: fixed;
+    right: 10px;
+    z-index: 9999;
+    transition: .2s all ease;
+    &:focus,
+    &:active,
+    &:hover {
+        background-color: var(--color-brand);
+        color: var(--color-white);
+    }
+}
+
+.mobile-only {
+    display: none !important;
+    @include tablet {
+        display: flex !important;
+    }
+    @include mobile {
+        display: flex !important;
+    }
+}
+
+.desktop-only {
+    @include tablet {
+        display: none !important;
+    }
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+/* Animation Names
+--------------------------------------------- */
+
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate-glow {
+    0% {
+        filter: brightness(3) saturate(3);
+        transform: scale(0.8, 0.8);
+    }
+    100% {
+        filter: brightness(1) saturate(1);
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        margin-top: 160px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 40;
+    }
+}
+.animate {
+    opacity: 0;
+    transition: 2s ease all;
+}
+.in-view {
+    margin-top: 0;
+    opacity: 1;
+    animation: animate-glow .4s ease;
+}
+
+/* Respecting accessibility preferences
+--------------------------------------------- */
+@media screen and (prefers-reduced-motion: reduce) {
+    .animate { animation: none !important; }
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+ul, ol{
+    font-family: 'Poppins', 'Hanuman', sans-serif;
+}

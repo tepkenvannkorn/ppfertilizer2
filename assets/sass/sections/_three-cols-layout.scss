@@ -1,0 +1,50 @@
+.section-three-cols-layout {
+    padding: 80px 0;
+    .wrapper {
+        h2 {
+            margin-bottom: 30px;
+            @include mobile {
+                font-size: 24px;
+                line-height: 1.25;
+            }
+        }
+    }
+    .cols {
+        display: flex;
+        gap: 1rem;
+        @include mobile {
+            flex-direction: column;
+        }
+        .col {
+            flex: 1 1 calc(33.3333% - 1rem);
+            p {
+                margin-bottom: 20px;
+                a {
+                    text-decoration: underline;
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: var(--color-brand);
+                    }
+                }
+            }
+            h3 {
+                margin: 30px 0 20px 0;
+            }
+            img {
+                margin-bottom: 20px;
+            }
+            ul,
+            ol {
+                list-style: auto;
+                padding: 0 0 20px 40px;
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+            ul {
+                list-style-type: disc;
+            }
+        }
+    }
+}

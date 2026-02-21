@@ -1,0 +1,56 @@
+/** Print Style */
+header,
+.navbar,
+.primary-nav,
+.breadcrumb,
+.meta-wrapper,
+footer,
+.sidebar,
+.related-articles,
+a.read-more,
+.hero-subpage .meta-wrapper {
+    display: none;
+}
+
+.hero-subpage {
+    padding: 0;
+}
+
+section.hot-news {
+    display: none;
+}
+
+.hero .single {
+    width: 100%;
+}
+
+.page-content .col-md-8 {
+    width: 100%;
+}
+
+div.single .image-wrapper,
+div.single .image-wrapper img {
+    min-height: 500px;
+}
+
+.main-text .caption {
+    display: none;
+}
+
+#wpdevar_comment_1 {
+    display: none;
+}
+
+.breaker,
+.addthis_tool {
+    display: none;
+}
+
+.hero .col-md-4 {
+    display: none;
+}
+
+// Page Single Service
+.service-description form {
+    display: none;
+}

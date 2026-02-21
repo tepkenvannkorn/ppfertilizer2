@@ -1,0 +1,50 @@
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    list-style: none;
+    margin-bottom: 2rem;
+    li {
+        width: calc(33.3333% - .66667rem);
+        @include mobile {
+            width: 100%;
+        }
+        &:last-child {
+            margin-right: auto;
+        }
+    }
+    &__picture {
+        border-radius: 5px;
+        max-height: 400px;
+        position: relative;
+        overflow: hidden;
+        transition: .3s ease all;
+        img {
+            @include positionImage();
+            border-radius: 5px;
+            min-height: 400px;
+            max-height: 400px;
+            height: 400px;
+            width: 100%;
+        }
+        .overlay {
+            @include overlay();
+            transition: .2s ease all;
+        }
+        &:hover {
+            .overlay {
+                background-color: transparent;
+            }
+        }
+    }
+    &__name {
+        text-align: center;
+        padding: 20px 1rem;
+        p {
+            color: var(--color-text-grey);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+    }
+}

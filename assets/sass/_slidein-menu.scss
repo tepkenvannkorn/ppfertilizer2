@@ -1,0 +1,241 @@
+/* Slide In Menu */
+
+body.show-menu {
+    overflow-y: scroll;
+    .slidein-menu {
+        left: 0;
+    }
+}
+
+.slidein-menu {
+    background: var(--color-white);
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    left: -300px;
+    padding: 40px 20px;
+    overflow: auto;
+    transition: all .5s;
+    box-shadow: 1px 0 1px 0 rgba(0, 0, 0, .1);
+    transition-timing-function: cubic-bezier(.2, 0, .3, 1);
+    z-index: 99999;
+    .lang-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        top: 15px;
+        .nav {
+            display: flex;
+            gap: 20px;
+            li.current-lang {
+                a span {
+                    color: var(--color-brand);
+                }
+            }
+            a {
+                span {
+                    font-size: .8rem;
+                }
+                img {
+                    max-width: 30px;
+                }
+            }
+        }
+    }
+    .search-box {
+        margin-top: 20px;
+        position: static;
+        input#searchControl {
+            background-color: transparent !important;
+            border-color: var(--color-text-grey);
+            color: var(--color-text-grey);
+            width: 110px;
+            &:not(:placeholder-shown),
+            &:focus {
+                border-color: var(--color-text-grey);
+                width: 100%;
+            }
+            &::placeholder {
+                color: var(--color-text-grey);
+            }
+            &:-webkit-autofill,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active,
+            &:-webkit-autofill:hover {
+                -webkit-background-clip: text;
+                -webkit-box-shadow:0 0 0 50px transparent inset !important; /* Change the color to your own background color */
+                -webkit-text-fill-color: var(--color-text-grey) !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+        button[type="submit"] {
+            right: auto;
+            margin-left: -40px;
+            span {
+                color: var(--color-text-grey);
+            }
+        }
+    }
+    .site-branding {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        a.custom-logo-link {
+            display: inline-block;
+            margin-top: 0;
+        }
+    }
+    ul.slidein-nav {
+        margin-top: 40px;
+        li {
+            line-height: 2;
+            width: 100%;
+            &.dropdown {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                >a {
+                    color: var(--color-text-grey);
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    &:after {
+                        color: var(--color-text-grey);
+                        content: '\F229';
+                        display: inline-block;
+                        font-family: 'bootstrap-icons';
+                        font-size: .8rem;
+                    }
+                }
+                &.active {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    >a:after {
+                        content: '\F235';
+                    }
+                }
+            }
+            &.current-menu-item {
+                >a {
+                    border-bottom: 4px solid var(--color-secondary);
+                    margin-bottom: 4px;
+                    padding-bottom: 0;
+                }
+            }
+        }
+        a {
+            color: var(--color-text-grey);
+            display: inline-block;
+            padding-left: 0;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            transition: all .9s;
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: var(--color-light-green);
+                text-decoration: none;
+            }
+        }
+        a.dropdown-toggle {
+            position: relative;
+            &:after {
+                position: absolute;
+                right: 0;
+                top: calc(50% - .15em);
+            }
+        }
+    }
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        text-indent: -9999px;
+        &:before {
+            background: var(--color-text-grey);
+            content: '';
+            height: 22px;
+            outline: 0;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 5px;
+            transform: rotate( 45deg);
+        }
+        &:after {
+            background: var(--color-text-grey);
+            content: '';
+            height: 22px;
+            outline: 0;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 5px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.slidein-menu ul.slidein-nav .dropdown-menu {
+    background-color: var(--color-light-green);
+    border: 0;
+    display: none;
+    margin-left: 20px !important;
+    position: static !important;
+    transform: none !important;
+    width: calc(100% - 20px);
+    &.shown {
+        display: block;
+    }
+}
+
+.show-menu .slidein-menu-backdrop {
+    display: block;
+    z-index: 998;
+    // -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.show-menu .slidein-menu {
+    display: block;
+}
+
+.slidein-menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    transition: all .5s;
+    //-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    z-index: 0;
+}
+
+@media ( min-width: 375px) {
+    .slidein-menu {
+        left: -320px;
+        width: 320px;
+    }
+}
+
+@media ( min-width: 568px) {
+    .slidein-menu {
+        left: -450px;
+        width: 450px;
+    }
+}

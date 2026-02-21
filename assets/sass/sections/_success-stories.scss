@@ -1,0 +1,152 @@
+.section-success-stories {
+    margin-top: 40px;
+    padding: 80px 0;
+    .wrapper > h2 {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 1.3px;
+        line-height: 30px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .story-wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        margin-bottom: 60px;
+        @include small {
+            grid-template-columns: 49% 49%;
+            grid-template-rows: 49% 49%;
+            margin-bottom: 40px;
+        }
+        @include mobile {
+            display: block;
+        }
+    }
+    .story-item {
+        background-color: var(--color-grey);
+        display: flex;
+        gap: 1rem;
+        grid-row: 1 / 2; // Sits on the first row
+        grid-column: 2 / 3; // Take the second coloumn
+        @include mobile {
+            margin-bottom: 1rem;
+        }
+        >div {
+            flex: 1 1 0;
+            padding-right: 1rem;
+        }
+        ul.nav.meta {
+            border-left: 4px solid yellow;
+            display: flex;
+            gap: 10px;
+            line-height: 1;
+            padding-left: 10px;
+            margin: 1rem 0;
+            a {
+                color: var(--color-text);
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+        .media {
+            position: relative;
+            overflow: hidden;
+            a {
+                display: block;
+                img {
+                    transition: .2s ease all;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    min-height: 100%;
+                    object-fit: cover;
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        .content {
+            h2 {
+                @include lineClaim(2);
+                font-size: 24px;
+                margin-bottom: 20px;
+                text-transform: none;
+                line-height: 1.25;
+                margin-bottom: 1rem;
+                a {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: var(--color-brand);
+                    }
+                }
+            }
+            >p {
+                @include lineClaim(4);
+            }
+        }
+        &.featured {
+            grid-row: 1 / 3; // Spans both rows
+            grid-column: 1 / 2; //Takes first column
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            .overlay {
+                background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, var(--color-black) 80%);
+                opacity: .8;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+            .media {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+                z-index: 0;
+                a {
+                    display: block;
+                }
+                img {
+                    @include positionImage();
+                    min-height: 540px;
+                }
+            }
+            .content {
+                color: var(--color-white);
+                padding: 20px 25px;
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
+                h2 {
+                    a {
+                        color: var(--color-white);
+                    }
+                }
+            }
+            ul.nav.meta {
+                margin-bottom: 20px;
+                a {
+                    color: var(--color-white);
+                }
+            }
+        }
+        &:last-of-type {
+            grid-row: 2 / 3; // Sits on the second row
+            grid-column: 2 / 3; // Take the second coloumn
+        }
+    }
+}

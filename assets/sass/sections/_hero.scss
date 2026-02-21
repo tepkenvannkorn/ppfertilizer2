@@ -1,0 +1,63 @@
+.section-hero {
+    overflow: hidden;
+    .container {
+        overflow: visible;
+    }
+    .wrapper {
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 54px 0;
+        >div {
+            flex: 1 1 0;
+        }
+        @include tablet {
+            flex-direction: column;
+            padding: 30px 0;
+        }
+    }
+    .left {
+        h2 {
+            font-size: 36px;
+            @include tablet {
+                font-size: 1.5rem;
+            }
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        a.cta {
+            background-color: var(--color-secondary);
+            border-color: var(--color-secondary);
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: var(--color-border-color);
+                border-color: var(--color-border-color);
+            }
+        }
+    }
+    .right {
+        .video__external,
+        video {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            width: 100%;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            min-width: 100%;
+        }
+        @include tablet {
+            .video__external,
+            video,
+            img {
+                position: static;
+                min-width: calc(100vw - 30px);
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.section-two-cols-layout {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 80px 0;
+        >div, 
+        >img {
+            flex: 1 1 calc(50% - 20px);
+            width: calc(50% - 20px);
+        }
+        h2 {
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 20px;
+            a {
+                text-decoration: underline;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: var(--color-brand);
+                }
+            }
+        }
+        ul,
+        ol {
+            list-style: auto;
+            padding: 0 0 20px 40px;
+            li {
+                margin-bottom: 5px;
+            }
+        }
+        &.right {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+@include mobile {
+    .section-two-cols-layout {
+        .wrapper {
+            flex-direction: column;
+            >div,
+            >img {
+                width: 100%;
+            }
+            &.right {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}

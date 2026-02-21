@@ -1,0 +1,72 @@
+@use 'sass:math';
+$size__full-width: 1920px;
+$size__large-width: 1440px;
+$size__desktop-width: 1280px;
+$size__small-width: 1024px;
+// $size__tablet-width: 768px;
+$size__tablet-width: 992px;
+$size__mobile-width: 737px;
+$size__sticky-bar-width: 323px;
+@mixin full {
+    @media (max-width: $size__full-width) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (max-width: $size__large-width) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $size__desktop-width) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (max-width: $size__small-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $size__tablet-width) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $size__mobile-width) {
+        @content;
+    }
+}
+
+@mixin lineClaim($n: 2) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $n;
+    -webkit-box-orient: vertical;
+}
+
+@mixin positionImage() {
+    object-fit: cover;
+    object-position: top;
+    vertical-align: middle;
+}
+
+@mixin boxShadow() {
+    box-shadow: 0 10px 20px rgba(0,0,0,.25);
+}
+
+@mixin overlay() {
+    background-color: rgba(0,0,0,.25);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
