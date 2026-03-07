@@ -141,6 +141,15 @@ if ( is_array( $fields ) && sizeof( $fields ) > 0 ) {
             }
         ?>
 
+        <?php 
+            // Show Contact Form
+            if ( get_field( 'contact_form_shortcode', 'option' ) ) {
+                echo '<div class="contact-form-fullwidth">';
+                echo do_shortcode( get_field( 'contact_form_shortcode', 'option' ) );
+                echo '</div>';
+            }
+        ?>
+
     </div>
 </section>
 

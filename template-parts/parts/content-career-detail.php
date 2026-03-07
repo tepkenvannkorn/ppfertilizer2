@@ -34,7 +34,7 @@
             }
            
         ?>
-        <?php if ( str_contains( $slug, 'open' ) ): ?>
+        <?php if ( str_contains( $slug, 'open' ) || str_contains( $slug, 'on-going' ) ): ?>
 		    <a href="<?php echo $apply_now_link; ?>" class="cta"><?php echo $apply_now_text; ?></a>
         <?php endif; ?>
 
@@ -48,7 +48,7 @@
 
         <?php endif; ?>
 
-        <?php if ( str_contains( $slug, 'open' ) ): ?>
+        <?php if ( str_contains( $slug, 'open' ) || str_contains( $slug, 'on-going' ) ): ?>
 		    <a href="<?php echo $apply_now_link; ?>" class="cta"><?php echo $apply_now_text; ?></a>
         <?php endif; ?>
 

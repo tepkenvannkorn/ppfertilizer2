@@ -153,7 +153,8 @@
                     color: var(--color-white);
                     display: inline-block;
                     padding: 2px 8px;
-                    &[class*='open'] {
+                    &[class*='open'],
+                    &[class*='on-going'] {
                         background-color: var(--color-brand);
                     }
                 }
@@ -237,6 +238,7 @@
 
 // Contact Page
 .section-contact {
+    background-color: var(--color-text-grey);
     padding: 80px 0 44px 0;
     .tab-heading {
         display: flex;
@@ -389,23 +391,23 @@
         }
         .form-control {
             border: 0;
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-brand);
             border-radius: 0;
             display: block;
             font-family: 'Poppins', 'Hanuman', sans-serif;
             font-size: 1rem;
             line-height: 1.5;
-            padding: 12px 0;
+            padding: 12px 0 13px 12px;
             width: 100%;
             &::placeholder {
-                color: var(--color-text-grey);
+                color: var(--color-secondary);
                 font-size: .875rem;
                 letter-spacing: 1.2px;
                 text-transform: uppercase;
             }
         }
         select {
-            color: var(--color-text-grey);
+            color: var(--color-secondary);
             font-size: .875rem !important;
             padding: .875rem 0 !important;
             text-transform: uppercase;
@@ -416,7 +418,7 @@
         .wpcf7-submit {
             background-color: var(--color-secondary);
             border: 0;
-            color: var(--color-brand);
+            color: var(--color-white);
             cursor: pointer;
             font-size: 1rem;
             padding: 1rem 2rem;
@@ -452,7 +454,8 @@
                 color: var(--color-white);
                 display: inline-block;
                 padding: 2px 8px;
-                &[class*='open'] {
+                &[class*='open'],
+                &[class*='on-going'] {
                     background-color: var(--color-secondary);
                 }
             }

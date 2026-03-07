@@ -50,16 +50,16 @@ body.show-menu {
         position: static;
         input#searchControl {
             background-color: transparent !important;
-            border-color: var(--color-text-grey);
-            color: var(--color-text-grey);
+            border-color: var(--color-text);
+            color: var(--color-text);
             width: 110px;
             &:not(:placeholder-shown),
             &:focus {
-                border-color: var(--color-text-grey);
+                border-color: var(--color-text);
                 width: 100%;
             }
             &::placeholder {
-                color: var(--color-text-grey);
+                color: var(--color-text);
             }
             &:-webkit-autofill,
             &:-webkit-autofill:focus,
@@ -67,7 +67,7 @@ body.show-menu {
             &:-webkit-autofill:hover {
                 -webkit-background-clip: text;
                 -webkit-box-shadow:0 0 0 50px transparent inset !important; /* Change the color to your own background color */
-                -webkit-text-fill-color: var(--color-text-grey) !important;
+                -webkit-text-fill-color: var(--color-text) !important;
                 transition: background-color 5000s ease-in-out 0s;
             }
         }
@@ -75,7 +75,7 @@ body.show-menu {
             right: auto;
             margin-left: -40px;
             span {
-                color: var(--color-text-grey);
+                color: var(--color-text);
             }
         }
     }
@@ -99,12 +99,12 @@ body.show-menu {
                 align-items: center;
                 gap: 6px;
                 >a {
-                    color: var(--color-text-grey);
+                    color: var(--color-text);
                     display: flex;
                     align-items: center;
                     gap: 6px;
                     &:after {
-                        color: var(--color-text-grey);
+                        color: var(--color-text);
                         content: '\F229';
                         display: inline-block;
                         font-family: 'bootstrap-icons';
@@ -128,7 +128,7 @@ body.show-menu {
             }
         }
         a {
-            color: var(--color-text-grey);
+            color: var(--color-text);
             display: inline-block;
             padding-left: 0;
             padding-bottom: 5px;
@@ -156,7 +156,7 @@ body.show-menu {
         right: 15px;
         text-indent: -9999px;
         &:before {
-            background: var(--color-text-grey);
+            background: var(--color-text);
             content: '';
             height: 22px;
             outline: 0;
@@ -167,7 +167,7 @@ body.show-menu {
             transform: rotate( 45deg);
         }
         &:after {
-            background: var(--color-text-grey);
+            background: var(--color-text);
             content: '';
             height: 22px;
             outline: 0;
