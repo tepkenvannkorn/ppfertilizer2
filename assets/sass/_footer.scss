@@ -26,7 +26,9 @@ footer:not([class]) {
             color: var(--color-secondary);
             font-size: 1rem;
             margin-bottom: 20px;
+            min-height: 24px;
             text-transform: uppercase;
+            white-space: nowrap;
         }
         .menu {
             width: calc(33.3333% - 1rem);

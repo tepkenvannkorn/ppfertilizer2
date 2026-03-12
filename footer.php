@@ -21,15 +21,7 @@
                     <div class="footer__contact">
                         <ul class="nav no-arrow">
 							<?php 
-								if ( get_locale() == 'en_US') {
-									if ( get_field( 'address_en', 'option' ) ):
-										echo '<li><span class="bi bi-house-door"></span> '. get_field( 'address_en', 'option' ) . '</li>';
-									endif;
-								} else {
-									if ( get_field( 'address_kh', 'option' ) ):
-										echo '<li><span class="bi bi-house-door"></span> '. get_field( 'address_kh', 'option' ) . '</li>';
-									endif;
-								}
+								echo '<li><span class="bi bi-house-door"></span> '. get_field( 'address', 'option' ) . '</li>';
 							?>
                             <?php if ( get_field( 'phone', 'option' ) ):
                                 echo '<li><span class="bi bi-telephone"></span> <a href="tel:' .  get_field( 'phone', 'option' ) . '">' . get_field( 'phone', 'option' ) . '</a></li>';
@@ -37,8 +29,14 @@
 							<?php if ( get_field( 'phone_2', 'option' ) ):
                                 echo '<li><span class="bi bi-telephone"></span> <a href="tel:' .  get_field( 'phone_2', 'option' ) . '">' . get_field( 'phone_2', 'option' ) . '</a></li>';
                             endif; ?>
-							<?php if ( get_field( 'po_box', 'option' ) ):
-                                echo '<li><span class="bi bi-mailbox-flag"></span> ' . get_field( 'po_box', 'option' ) . '</li>';
+							<?php if ( get_field( 'mobile', 'option' ) ):
+                                echo '<li><span class="bi bi-phone"></span> <a href="tel:' .  get_field( 'mobile', 'option' ) . '">' . get_field( 'mobile', 'option' ) . '</a></li>';
+                            endif; ?>
+							<?php if ( get_field( 'mobile_2', 'option' ) ):
+                                echo '<li><span class="bi bi-phone"></span> <a href="tel:' .  get_field( 'mobile_2', 'option' ) . '">' . get_field( 'mobile_2', 'option' ) . '</a></li>';
+                            endif; ?>
+							<?php if ( get_field( 'mobile_3', 'option' ) ):
+                                echo '<li><span class="bi bi-phone"></span> <a href="tel:' .  get_field( 'mobile_3', 'option' ) . '">' . get_field( 'mobile_3', 'option' ) . '</a></li>';
                             endif; ?>
                             <?php if ( get_field( 'email', 'option' ) ):
                                 echo '<li><span class="bi bi-envelope"></span> <a href="mailto:' .  get_field( 'email', 'option' ) . '">' . get_field( 'email', 'option' ) . '</a></li>';
@@ -48,17 +46,12 @@
                         <?php 
                         
                             if ( have_rows( 'social_medias', 'option' ) ) {
-
                                 echo '<ul class="nav social">';
-
                                 while ( have_rows( 'social_medias', 'option' ) ) {
                                     the_row();
-
                                     echo '<li><a href="' . get_sub_field( 'social_media_link' ) . '" target="_blank" rel="nofollow"><span class="bi bi-' . get_sub_field( 'social_media_name' ) . '"></span></a></li>';
                                 }
-
                                 echo '</ul>';
-
                             }
                         
                         ?>
@@ -67,65 +60,25 @@
                 </div>
 				<div class="menu">
 					<h3>
-						<?php 
-							if ( get_locale() == 'en_US' ) {
-								if ( get_field( 'footer_menu_1_heading_en', 'option' ) ):
-									echo get_field( 'footer_menu_1_heading_en', 'option' );
-								endif;
-							} else {
-								if ( get_field( 'footer_menu_1_heading_kh', 'option' ) ):
-									echo get_field( 'footer_menu_1_heading_kh', 'option' );
-								endif;
-							}
-						?>
+						<?php echo get_field( 'footer_menu_1_heading', 'option' ); ?>
 					</h3>
 					<?php echo ppfertilizer_menu( 'footer-menu-1' ); ?>
 				</div>
 				<div class="menu">
 					<h3>
-						<?php 
-							if ( get_locale() == 'en_US' ) {
-								if ( get_field( 'footer_menu_2_heading_en', 'option' ) ):
-									echo get_field( 'footer_menu_2_heading_en', 'option' );
-								endif;
-							} else {
-								if ( get_field( 'footer_menu_2_heading_kh', 'option' ) ):
-									echo get_field( 'footer_menu_2_heading_kh', 'option' );
-								endif;
-							}
-						?>
+						<?php echo get_field( 'footer_menu_2_heading', 'option' ); ?>
 					</h3>
 					<?php echo ppfertilizer_menu( 'footer-menu-2' ); ?>
 				</div>
 				<div class="menu">
 					<h3>
-						<?php 
-							if ( get_locale() == 'en_US' ) {
-								if ( get_field( 'footer_menu_3_heading_en', 'option' ) ):
-									echo get_field( 'footer_menu_3_heading_en', 'option' );
-								endif;
-							} else {
-								if ( get_field( 'footer_menu_3_heading_kh', 'option' ) ):
-									echo get_field( 'footer_menu_3_heading_kh', 'option' );
-								endif;
-							}
-						?>
+						<?php echo get_field( 'footer_menu_3_heading', 'option' ); ?>
 					</h3>
 					<?php echo ppfertilizer_menu( 'footer-menu-3' ); ?>
 				</div>
 				<div class="menu">
 					<h3>
-						<?php 
-							if ( get_locale() == 'en_US' ) {
-								if ( get_field( 'footer_menu_4_heading_en', 'option' ) ):
-									echo get_field( 'footer_menu_4_heading_en', 'option' );
-								endif;
-							} else {
-								if ( get_field( 'footer_menu_4_heading_kh', 'option' ) ):
-									echo get_field( 'footer_menu_4_heading_kh', 'option' );
-								endif;
-							}
-						?>
+						<?php echo get_field( 'footer_menu_4_heading', 'option' ); ?>
 					</h3>
 					<?php echo ppfertilizer_menu( 'footer-menu-4' ); ?>
 				</div>
@@ -134,17 +87,7 @@
 		<div class="footer footer__bottom">
 			<div class="container">
                 <div class="copyrights">
-					<?php 
-						if ( get_locale() == 'en_US' ) {
-							if ( get_field( 'copyrights_text_en', 'option' ) ):
-								echo get_field( 'copyrights_text_en', 'option' );
-							endif;
-						} else {
-							if ( get_field( 'copyrights_text_kh', 'option' ) ):
-								echo get_field( 'copyrights_text_kh', 'option' );
-							endif;
-						}
-					?>
+					<?php echo get_field( 'copyrights_text', 'option' ); ?>
 				</div>
 				<div class="legal">
 					<?php echo ppfertilizer_menu( 'legal-menu' ); ?>
