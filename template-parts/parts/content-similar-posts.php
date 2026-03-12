@@ -7,6 +7,8 @@
  * @package ppfertilizer
  */
 
+$posts_per_page = get_field( 'number_of_related_news', 'option' );
+
 if ( 'post' == get_post_type() ) {
 
 	$related_by_tags = true;
@@ -26,7 +28,7 @@ if ( 'post' == get_post_type() ) {
 		$args = array(
 			'tag__in' => $tag_ids, 
 			'post__not_in' => array( $post->ID ), 
-			'posts_per_page' => 3, 
+			'posts_per_page' => $posts_per_page, 
 			'ignore_sticky_posts' => 1, 
 			'orderby' => 'rand' 
 		);
@@ -39,7 +41,7 @@ if ( 'post' == get_post_type() ) {
 			$args = array (
 				'category_name' => $cat[0]->slug, // Related by category name
 				'post__not_in' => array( $post->ID ),
-				'posts_per_page' => 3
+				'posts_per_page' => $posts_per_page,
 			);
 		}
 	}
@@ -62,7 +64,7 @@ if ( 'post' == get_post_type() ) {
 				// Set up the related posts query
 				$args = array(
 					'post_type'      => get_post_type(),
-					'posts_per_page' => 3, 
+					'posts_per_page' => $posts_per_page, 
 					'post__not_in'   => array( $post->ID ),
 					'tax_query'      => array(
 						array(
@@ -84,6 +86,8 @@ if ( $related_posts->have_posts() ) {
 
 	echo '<h2><span>' . pll__( 'Similar Stories' ) . '</span></h2>';
 
+	echo '<div class="similar-stories">';
+
 	while ( $related_posts->have_posts() ) {
 		$related_posts->the_post(); ?>
 
@@ -98,5 +102,7 @@ if ( $related_posts->have_posts() ) {
 		</div>
 
 	<?php }
+
+	echo '</div>';
 	wp_reset_postdata();
 }

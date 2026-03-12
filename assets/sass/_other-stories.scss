@@ -1,11 +1,11 @@
 .other-stories {
-    display: flex;
-    gap: 1rem;
+    margin-top: 1rem;
     @include tablet {
         flex-direction: column;
     }
     >div {
-        flex: 1 1 0;
+        display: flex;
+        flex-wrap: wrap;
     }
     h2 {
         border-bottom: 4px solid var(--color-brand);
@@ -18,8 +18,9 @@
     }
     .item {
         display: flex;
-        gap: 2rem;
-        margin-bottom: 2rem;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        width: calc(50% - .5rem);
         a.media {
             height: 150px;
             max-width: 200px;
@@ -79,6 +80,7 @@
     .other-stories {
         flex-direction: column;
         .item {
+            width: 100%;
             .text {
                 .nav.meta {
                     align-items: flex-start;

@@ -36,10 +36,5 @@
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <div class="other-stories animate">
-    <div class="similar-stories">
-        <?php get_template_part( 'template-parts/parts/content', 'similar-posts' ); ?>
-    </div>
-    <div class="latest-stories">
-        <?php get_template_part( 'template-parts/parts/content', 'latest-posts' ); ?>
-    </div>
+    <?php get_template_part( 'template-parts/parts/content', 'similar-posts' ); ?>
 </div>
