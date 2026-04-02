@@ -1,6 +1,6 @@
 footer:not([class]) {
-    background-color: var(--color-black);
-    color: var(--color-white); 
+    background-color: var(--color-secondary);
+    color: var(--color-text); 
     padding: 80px 0 0 0;
 }
 
@@ -11,7 +11,7 @@ footer:not([class]) {
             margin-bottom: 1rem;
         }
         img.custom-logo {
-            max-width: 120px;
+            max-width: 320px;
             height: auto;
         }
     }
@@ -23,7 +23,7 @@ footer:not([class]) {
             gap: 32px;
         }
         h3 {
-            color: var(--color-secondary);
+            color: var(--color-brand);
             font-size: 1rem;
             margin-bottom: 20px;
             min-height: 24px;
@@ -37,12 +37,12 @@ footer:not([class]) {
                     margin-bottom: .5rem;
                 }
                 a {
-                    color: var(--color-white);
+                    color: var(--color-text);
                     font-size: .875rem;
                     &:hover,
                     &:focus,
                     &:active {
-                        color: var(--color-secondary);
+                        color: var(--color-white);
                     }
                 }
             }
@@ -56,11 +56,11 @@ footer:not([class]) {
             gap: 1rem;
             margin-bottom: 12px;
             a {
-                color: var(--color-white);
+                color: var(--color-text);
                 &:hover,
                 &:active,
                 &:focus {
-                    color: var(--color-secondary);
+                    color: var(--color-white);
                 }
             }
         }
@@ -72,21 +72,21 @@ footer:not([class]) {
                 margin-bottom: 0;
             }
             a {
-                color: var(--color-white);
+                color: var(--color-text);
                 display: block;
                 font-size: 1.5rem;
                 transition: .2s ease all;
                 &:hover,
                 &:active,
                 &:focus {
-                    color: var(--color-secondary);
+                    color: var(--color-white);
                 }
             }
         }
     }
     &__bottom {
-        border-top: 1px solid var(--color-secondary);
-        color: var(--color-white);
+        border-top: 1px solid var(--color-text);
+        color: var(--color-text);
         font-size: .875rem;
         max-height: 73px;
         padding: 20px 0;
@@ -99,7 +99,7 @@ footer:not([class]) {
             display: flex;
             gap: 1rem;
             a {
-                color: var(--color-white);
+                color: var(--color-text);
             }
         }
     }

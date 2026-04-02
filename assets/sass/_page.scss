@@ -1,5 +1,6 @@
 .sub-page-hero {
     background: var(--color-brand) url(../images/rock-bg.png) no-repeat right 10% center;
+    // background: var(--color-brand);
     color: var(--color-white);
     max-height: 150px;
     min-height: 150px;
@@ -41,7 +42,7 @@
         z-index: 0;
     }
     .overlay {
-        background-color: rgba(0, 0, 0, .4);
+        // background-color: rgba(0, 0, 0, .4);
         bottom: 0;
         left: 0;
         position: absolute;
