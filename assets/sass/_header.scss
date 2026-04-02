@@ -206,6 +206,7 @@ body.menu-shown {
             a {
                 color: var(--color-text);
                 font-family: 'Poppins', 'Hanuman', sans-serif;
+                font-weight: 500;
             }
             &.current_page_item,
             &.current-menu-parent {
