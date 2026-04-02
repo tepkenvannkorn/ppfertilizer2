@@ -230,6 +230,9 @@ body.show-menu {
     .slidein-menu {
         left: -320px;
         width: 320px;
+        .site-branding img.custom-logo {
+            max-width: 100%;
+        }
     }
 }
 

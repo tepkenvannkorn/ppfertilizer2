@@ -172,7 +172,7 @@ body.menu-shown {
     }
     img.custom-logo {
         border-radius: 8px;
-        max-width: 120px;
+        max-width: 320px;
         height: auto;
         padding: 8px 0;
         transition: .4s ease-in-out all;
@@ -285,7 +285,6 @@ body.menu-shown {
 @include tablet {
     .site-branding {
         img.custom-logo {
-            max-width: 80px;
             padding: 4px 0;
         }
     }
@@ -349,12 +348,12 @@ body.menu-shown {
 }
 
 @include mobile {
-    .site-branding {
-        a {
-            max-width: 60px;
-            img.custom-logo {
-                max-width: 60px;
-            }
-        }
-    }
+    // .site-branding {
+    //     a {
+    //         max-width: 60px;
+    //         img.custom-logo {
+    //             max-width: 60px;
+    //         }
+    //     }
+    // }
 }
