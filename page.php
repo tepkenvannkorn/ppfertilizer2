@@ -20,6 +20,13 @@ if ( ! is_front_page() ) {
 	get_template_part( 'template-parts/parts/content', 'subpage-hero');
 }
 
+echo '<section class="section-page animate"><div class="container">';
+ppfertilizer_post_thumbnail(); 
+if ( !empty ( get_thumb_caption( get_the_ID() ) ) ) {
+	echo '<p class="caption">' . get_thumb_caption( get_the_ID() ) . '</p>';
+}
+echo '</div></section>';
+
 $fields = get_field( 'ppfertilizer_layout' );
 if ( is_array( $fields ) && sizeof( $fields ) > 0 ) {
 	foreach ( $fields as $field ) {
